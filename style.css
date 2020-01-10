@@ -1,0 +1,39 @@
+.card {
+    width:500px;
+    height:300px;
+    margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+
+}
+
+.card-body {
+    font-size: 25px;
+}
+
+.bg1 {
+    animation:slide 4s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(226, 96, 79) 50%, rgb(233, 236, 240) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:10s;
+  }
+  .bg3 {
+    animation-duration:30s;
+  }
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
