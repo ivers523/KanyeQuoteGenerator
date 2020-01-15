@@ -1,0 +1,34 @@
+"Pseudo.code"
+
+
+#API.txt = insert.quote(here) =
+
+
+quotes = ("qoute 1");
+
+ "then"(than?) perform a function to grab NEW data from the API("hostserver");
+
+
+ HOST SERVER + PROCESS = TBD !
+
+ #NEED:
+ - host API SERVER
+ - styles
+ - init/host/deploy ?
+
+
+
+ #WANT:
+
+ - styles (improved.assets);
+ - SFW Funny KANYE west random quote generator
+
+
+
+
+
+ 
+
+
+
+
