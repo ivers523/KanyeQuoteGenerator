@@ -2,64 +2,54 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>"random_temp1""</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Kanye Quotes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
-  <div class="container m-5 center">
-    <div class="bg1"></div>
-    <div class="bg1 bg2"></div>
-    <div class="bg1 bg3"></div>
-    <div class="row">
-      <div class="col">
-        <div class="card shadow-sm">
-          <h5 class="card-title text-center">"KANYE.TEST"
-          </h5>
-          <div class="card-body text-center" id="quotehere"></div>
+    <div class="container m-5 center">
+        <div class="bg1"></div>
+        <div class="bg1 bg2"></div>
+        <div class="bg1 bg3"></div>
+        <div class="row">
+            <div class="col">
+                <div class="card center-contents p-2 shadow-sm">
+                    <h5 class="card-title text-center">KANYE QUOTE OF THE DAY:</h5>
+                    <div class="card-body text-center" id="quotehere"></div>
 
-          <button type="button" id="newbtn" onclick="refreshPage()">MOOD:</button>
+                    <button type="button" id="newbtn" onclick="refreshPage()">NEW QUOTE</button>
 
 
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- scripts -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript">
+        <!-- scripts -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript">
+            const searchQuote = function(quote) {
+                const queryURL = "https://api.kanye.rest";
+                axios.get(
+                    queryURL
+                ).then(function(quote) {
+                    console.log(quote.data);
+                    const quoteEl = document.getElementById("quotehere")
+                    quoteEl.innerHTML = quote.data.quote;
+                });
+            };
+            searchQuote();
 
-      const searchQuote = function (quote) {
-// NEED TO HOST (local?) RESTful API w/ / (qoutes)
-        axios.get(
-          queryURL
-        ).then(function (quote) {
-          console.log(quote.data);
-          const quoteEl = document.getElementById("quotehere")
-          quoteEl.innerHTML = quote.data.quote;
-        });
-      };
-      searchQuote();
+            const newBtnEl = document.getElementById("newbtn")
 
-      const newBtnEl = document.getElementById("newbtn")
-
-      function refreshPage() {
-        window.location.reload();
-      }
-
-    
-    </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"></script>
+            function refreshPage() {
+                window.location.reload();
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+
 </html>
